@@ -7,5 +7,21 @@ AnimatorOverrideController:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: RainCoat
-  m_Controller: {fileID: 0}
-  m_Clips: []
+  m_Controller: {fileID: 9100000, guid: 951be535c9d25c6489a6eb712aecb130, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: ff2816ce470c5fd44a42a0c5e0d10337, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 935a077b7a611464a956c84f2a538b7d, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: b2d66fe83939dc24289bb9233332e1d6, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 5d1bcd14e57c13e4cb5549f597f32736, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 9ae6725fbc8719346b159d44aeba950c, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 47a79e583d5ecb04cbb3074c2c9ac51f, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 0c0031b912523a5479794a3c11187b87, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 799574d4083fd6b4ca511f7756ea7bf9, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: c47aa1def6fc6674297a1b3c689582c2, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: feee36a4d8f9e1945a9b7e057a261c35, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 16c364fa664d3a149992541ec0be1776, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 450851dce198e254eaa2ee3e1ae94f6d, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 5bf6ffdfdafa33949ac2159f8e20b4a2, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: b1c65a79976b1b84587341558bb667a0, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: befbdf77e0ff04a48903672dfcdb4e1a, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: f206251d777dfd345ae9fb8f19d84138, type: 2}

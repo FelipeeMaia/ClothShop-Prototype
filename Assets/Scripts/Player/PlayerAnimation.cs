@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Cloth.Player
@@ -14,6 +12,11 @@ namespace Cloth.Player
         void Start()
         {
             _movement.OnDirectionChange += MovingAnimation;
+        }
+
+        public void ChangeClothes(AnimatorOverrideController newClothes)
+        {
+            _clothesAnimator.runtimeAnimatorController = newClothes;
         }
 
         private void MovingAnimation(Vector2 direction)
