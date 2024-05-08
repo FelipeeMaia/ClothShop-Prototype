@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 314376666}
   - component: {fileID: 314376667}
+  - component: {fileID: 314376668}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -207,6 +208,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &314376668
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314376665}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 951be535c9d25c6489a6eb712aecb130, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &404970625
 GameObject:
   m_ObjectHideFlags: 0
@@ -217,6 +239,8 @@ GameObject:
   m_Component:
   - component: {fileID: 404970627}
   - component: {fileID: 404970626}
+  - component: {fileID: 404970629}
+  - component: {fileID: 404970628}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -288,6 +312,33 @@ Transform:
   - {fileID: 588532454}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &404970628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 404970625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ced43614059884489a33733f348c911, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bodyAnimator: {fileID: 314376668}
+  _clothesAnimator: {fileID: 1416192495}
+  _movement: {fileID: 404970629}
+--- !u!114 &404970629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 404970625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8ad959434ed7774a945c8f370a6a885, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,7 +492,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &588532454
 Transform:
   m_ObjectHideFlags: 0
@@ -601,6 +652,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1416192493}
   - component: {fileID: 1416192494}
+  - component: {fileID: 1416192495}
   m_Layer: 0
   m_Name: Clothes
   m_TagString: Untagged
@@ -664,7 +716,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 1889748573, guid: 9d16d96911baaad428fa2734ac48001d, type: 3}
+  m_Sprite: {fileID: 1501749087, guid: 86ac253d73e5ba44fb600aa2a0376b4d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -675,6 +727,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1416192495
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416192492}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 5202e8d8dd829b14f8492e40f2b422eb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1954422897
 GameObject:
   m_ObjectHideFlags: 0
