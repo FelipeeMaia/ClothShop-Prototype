@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace Cloth.Items
 {
+    /// <summary>
+    /// Sells and buy items from player.
+    /// </summary>
     public class ItemShop : MonoBehaviour
     {
         public List<Item> Stock { get; private set; }

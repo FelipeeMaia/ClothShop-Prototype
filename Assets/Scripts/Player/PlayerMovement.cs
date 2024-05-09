@@ -1,17 +1,17 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 namespace Cloth.Player
 {
+    /// <summary>
+    /// Handles player movement.
+    /// </summary>
     public class PlayerMovement : MonoBehaviour
     {
         [SerializeField] float _speed;
         private Vector2 _directions;
         public Action<Vector2> OnDirectionChange;
 
-        // Update is called once per frame
         void Update()
         {
             float x = Input.GetAxisRaw("Horizontal");

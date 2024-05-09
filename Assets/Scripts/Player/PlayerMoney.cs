@@ -2,9 +2,12 @@ using System;
 
 namespace Cloth.Player
 {
+    /// <summary>
+    /// Handles player money.
+    /// </summary>
     public class PlayerMoney
     {
-        public int money { get; private set; }
+        private int money;
         public Action<int> OnMoneyChange;
 
         public bool TrySpend(int ammount)

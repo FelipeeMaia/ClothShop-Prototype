@@ -10,13 +10,13 @@ namespace Cloth.Player
     /// </summary>
     public class PlayerInventory : MonoBehaviour
     {
-        [SerializeField] Item headItem;
-        [SerializeField] Item clothesItem;
+        public Action<Item> OnItemEquip;
+        
         public List<Item> Items { get; private set; }
+        private Item[] _equipedItems;
+
         public PlayerMoney Money { get; private set; }
         [SerializeField] int startingMoney;
-
-        public Action<Item> OnItemEquip;
 
         public void AddItem(Item item)
         {
@@ -30,12 +30,8 @@ namespace Cloth.Player
 
         public void EquipItem(Item item)
         {
-            Item equipedItem = item.itemSlot switch
-            {
-                ItemSlot.Clothes => clothesItem,
-                ItemSlot.Head    => headItem,
-                _                => null
-            };
+            int index = (int)item.itemSlot;
+            Item equipedItem = _equipedItems[index];
 
             if (equipedItem)
                 Items.Add(equipedItem);
