@@ -7,7 +7,7 @@ namespace Cloth.Player
         public int money { get; private set; }
         public Action<int> OnMoneyChange;
 
-        public bool Spend(int ammount)
+        public bool TrySpend(int ammount)
         {
             if (money >= ammount)
             {
