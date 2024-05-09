@@ -1,37 +1,42 @@
+using Cloth.Items;
 using UnityEngine;
 
 namespace Cloth.Player
 {
+    /// <summary>
+    /// Controls the player layered animation.
+    /// </summary>
     public class PlayerAnimation : MonoBehaviour
     {
-        [SerializeField] Animator _bodyAnimator;
-        [SerializeField] Animator _clothesAnimator;
+        [SerializeField] Animator[] _animators;
         [SerializeField] PlayerMovement _movement;
+        [SerializeField] PlayerInventory _inventory;
 
-        // Start is called before the first frame update
         void Start()
         {
-            _movement.OnDirectionChange += MovingAnimation;
+            _movement.OnDirectionChange += UpdateMovingAnimation;
+            _inventory.OnItemEquip += ChangeClothes;
         }
 
-        public void ChangeClothes(AnimatorOverrideController newClothes)
+        public void ChangeClothes(Item itemEquiped)
         {
-            _clothesAnimator.runtimeAnimatorController = newClothes;
+            int slot = (int)itemEquiped.itemSlot;
+           _animators[slot].runtimeAnimatorController = itemEquiped.animation;
         }
 
-        private void MovingAnimation(Vector2 direction)
+        private void UpdateMovingAnimation(Vector2 direction)
         {
             bool isMoving = direction != Vector2.zero;
 
-            _bodyAnimator.SetBool("isMoving", isMoving);
-            _clothesAnimator.SetBool("isMoving", isMoving);
+            for (int i = 0; i < _animators.Length; i++)
+            {
+                _animators[i].SetBool("isMoving", isMoving);
 
-            if (!isMoving) return;
+                if (!isMoving) break;
 
-            _bodyAnimator.SetFloat("X", direction.x);
-            _bodyAnimator.SetFloat("Y", direction.y);
-            _clothesAnimator.SetFloat("X", direction.x);
-            _clothesAnimator.SetFloat("Y", direction.y);
+                _animators[i].SetFloat("X", direction.x);
+                _animators[i].SetFloat("Y", direction.y);
+            }
         }
     }
 }

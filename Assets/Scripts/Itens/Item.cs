@@ -2,6 +2,9 @@ using UnityEngine;
 
 namespace Cloth.Items
 {
+    /// <summary>
+    /// Items atributes.
+    /// </summary>
     [CreateAssetMenu(fileName = "newItem", menuName = "Item", order = 1)]
     public class Item : ScriptableObject
     {
@@ -12,5 +15,5 @@ namespace Cloth.Items
         public AnimatorOverrideController animation;
     }
 
-    public enum ItemSlot { Head, Clothes, Hair}
+    public enum ItemSlot { Clothes = 1, Head, Hair}
 }

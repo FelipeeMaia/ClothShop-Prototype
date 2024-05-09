@@ -5,12 +5,16 @@ using System;
 
 namespace Cloth.Player
 {
+    /// <summary>
+    /// Handle players items and money.
+    /// </summary>
     public class PlayerInventory : MonoBehaviour
     {
         [SerializeField] Item headItem;
         [SerializeField] Item clothesItem;
         public List<Item> Items { get; private set; }
         public PlayerMoney Money { get; private set; }
+        [SerializeField] int startingMoney;
 
         public Action<Item> OnItemEquip;
 
@@ -40,6 +44,11 @@ namespace Cloth.Player
             equipedItem = item;
 
             OnItemEquip?.Invoke(item);
+        }
+
+        private void Start()
+        {
+            Money = new PlayerMoney(startingMoney);
         }
     }
 }
