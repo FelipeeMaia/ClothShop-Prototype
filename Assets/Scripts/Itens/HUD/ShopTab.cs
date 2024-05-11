@@ -1,10 +1,10 @@
-using TMPro;
-using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine;
+using TMPro;
 
 namespace Cloth.Items.HUD
 {
-    public class ShopItemHUD : MonoBehaviour
+    public class ShopTab: MonoBehaviour
     {
         [SerializeField] Image _iconDisplay;
         [SerializeField] TMP_Text _nameDisplay;
@@ -12,9 +12,9 @@ namespace Cloth.Items.HUD
         [SerializeField] Button button;
 
         private Item _myItem;
-        private ShopHUD _parent;
+        private ShopWindow _parent;
 
-        public void Setup(Item item, ShopHUD shop)
+        public void Setup(Item item, ShopWindow shop)
         {
             _iconDisplay.sprite = item.icon;
             _nameDisplay.text = item.name;
@@ -22,11 +22,13 @@ namespace Cloth.Items.HUD
 
             _myItem = item;
             _parent = shop;
+
+            gameObject.SetActive(true);
         }
 
         private void CallParent()
         {
-            //_parent.ButtonCall(_myItem);
+            _parent.Transaction(this, _myItem);
         }
 
         private void Start()

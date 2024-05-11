@@ -9,23 +9,31 @@ namespace Cloth.Items
     /// </summary>
     public class ItemShop : MonoBehaviour
     {
-        public List<Item> Stock { get; private set; }
+        [SerializeField] private List<Item> _stock;
 
-        public void PlayerSell(PlayerInventory player, Item item)
+        public bool PlayerSell(PlayerInventory player, Item item)
         {
             player.RemoveItem(item);
-            Stock.Add(item);
+            _stock.Add(item);
             player.Money.Gain(item.price);
+            return true;
         }
 
-        public void PlayerBuy(PlayerInventory player, Item item)
+        public bool PlayerBuy(PlayerInventory player, Item item)
         {
             bool succes = player.Money.TrySpend(item.price);
             if(succes)
             {
-                Stock.Remove(item);
+                _stock.Remove(item);
                 player.AddItem(item);
             }
+
+            return succes;
+        }
+
+        public ref readonly List<Item> GetProducts()
+        {
+            return ref _stock;
         }
     }
 }

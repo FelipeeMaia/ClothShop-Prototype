@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7245461c576e407439f6889df6f80168, type: 3}
-  m_Name: Boxer
+  m_Name: Wizard Hat
   m_EditorClassIdentifier: 
-  price: 100
-  icon: {fileID: 2047711097, guid: 86ac253d73e5ba44fb600aa2a0376b4d, type: 3}
+  price: 200
+  icon: {fileID: 990116434, guid: 8e15b59ef035c65449ac6b770473b79b, type: 3}
   hidesHair: 0
-  itemSlot: 1
+  itemSlot: 2
   animation: {fileID: 22100000, guid: 5202e8d8dd829b14f8492e40f2b422eb, type: 2}
