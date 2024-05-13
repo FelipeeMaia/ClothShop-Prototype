@@ -49,5 +49,13 @@ namespace Cloth.HUD
                 yield return new WaitForFixedUpdate();
             }
         }
+
+        private void Update()
+        {
+            if(Input.GetKeyDown(KeyCode.Escape))
+            {
+                CloseWindow();
+            }
+        }
     }
 }

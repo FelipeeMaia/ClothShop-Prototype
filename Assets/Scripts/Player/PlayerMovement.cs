@@ -35,6 +35,7 @@ namespace Cloth.Player
             Vector2 moveDirection = directions.normalized;
             Vector3 movement = moveDirection * Time.deltaTime * _speed;
             Vector3 newPosition = transform.position + movement;
+
             transform.position = newPosition;
         }
     }
