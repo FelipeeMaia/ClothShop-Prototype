@@ -11,9 +11,10 @@ namespace Cloth.Player
     public class PlayerInventory : MonoBehaviour
     {
         public Action<Item> OnItemEquip;
+        public Action<int> OnItemUnequip;
 
-        [SerializeField] private List<Item> _items;
-        private Item[] _equipedItems;
+        [SerializeField] List<Item> _items;
+        [SerializeField] Item[] _equipedItems;
 
         public PlayerMoney Money { get; private set; }
         [SerializeField] int startingMoney;
@@ -33,8 +34,10 @@ namespace Cloth.Player
             int index = (int)item.itemSlot;
             Item equipedItem = _equipedItems[index];
 
-            if (equipedItem)
-                _items.Add(equipedItem);
+            if (equipedItem is not null)
+            {
+                UnequipItem(equipedItem);
+            }
 
             _items.Remove(item);
             equipedItem = item;
@@ -42,7 +45,18 @@ namespace Cloth.Player
             OnItemEquip?.Invoke(item);
         }
 
-        private void Start()
+        public void UnequipItem(Item item)
+        {
+            int index = (int)item.itemSlot;
+            _equipedItems[index] = null;
+            Debug.Log(index);
+            Debug.Log(_equipedItems[index]);
+
+            _items.Add(item);
+            OnItemUnequip?.Invoke(index);
+        }
+
+        private void Awake()
         {
             Money = new PlayerMoney(startingMoney);
         }
@@ -50,6 +64,11 @@ namespace Cloth.Player
         public ref readonly List<Item> GetItems()
         {
             return ref _items;
+        }
+
+        public ref readonly Item[] GetEquipedItems()
+        {
+            return ref _equipedItems;
         }
     }
 }

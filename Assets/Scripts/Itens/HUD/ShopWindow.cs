@@ -12,11 +12,6 @@ namespace Cloth.Items.HUD
         [SerializeField] ItemShop _shop;
         [SerializeField] PlayerInventory _player;
 
-        private void OnEnable()
-        {
-            OpenWindow();
-        }
-
         public override void OpenWindow()
         {
             UpdateTabs();

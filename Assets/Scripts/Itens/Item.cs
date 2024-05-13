@@ -15,5 +15,5 @@ namespace Cloth.Items
         public AnimatorOverrideController animation;
     }
 
-    public enum ItemSlot { Clothes = 1, Head, Hair}
+    public enum ItemSlot { Clothes = 0, Head, Hair}
 }

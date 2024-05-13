@@ -7,15 +7,15 @@ namespace Cloth.Player
     /// </summary>
     public class PlayerMoney
     {
-        private int money;
+        public int Value { get; private set; }
         public Action<int> OnMoneyChange;
 
         public bool TrySpend(int ammount)
         {
-            if (money >= ammount)
+            if (Value >= ammount)
             {
-                money -= ammount;
-                OnMoneyChange?.Invoke(money);
+                Value -= ammount;
+                OnMoneyChange?.Invoke(Value);
                 return true;
             }
 
@@ -24,13 +24,13 @@ namespace Cloth.Player
 
         public void Gain(int ammount)
         {
-            money += ammount;
-            OnMoneyChange?.Invoke(money);
+            Value += ammount;
+            OnMoneyChange?.Invoke(Value);
         }
 
         public PlayerMoney(int startAmmount)
         {
-            money = startAmmount;
+            Value = startAmmount;
         }
     }
 }

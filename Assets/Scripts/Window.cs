@@ -8,6 +8,11 @@ namespace Cloth.HUD
         [SerializeField] protected CanvasGroup _canvas;
         [SerializeField] protected float _fadeDuration;
 
+        private void OnEnable()
+        {
+            OpenWindow();
+        }
+
         public virtual void OpenWindow()
         {
             _canvas.alpha = 0;
