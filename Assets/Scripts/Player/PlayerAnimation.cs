@@ -18,19 +18,27 @@ namespace Cloth.Player
             _movement.OnDirectionChange += UpdateMovingAnimation;
             _inventory.OnItemEquip += EquipClothes;
             _inventory.OnItemUnequip += RemoveClothes;
+
+            foreach(Item item in _inventory.GetEquipedItems())
+            {
+                EquipClothes(item);
+            }
         }
 
         public void EquipClothes(Item itemEquiped)
         {
+            if (itemEquiped == null) return;
+
             int slot = (int)itemEquiped.itemSlot;
            _animators[slot].runtimeAnimatorController = itemEquiped.animation;
-            _animators[slot].gameObject.SetActive(true);
 
             int hairSlot = (int)ItemSlot.Hair;
             if(itemEquiped.itemSlot == ItemSlot.Head)
             {
                 _animators[hairSlot].gameObject.SetActive(false);
             }
+
+            _animators[slot].gameObject.SetActive(true);
         }
 
         public void RemoveClothes(int itemType)

@@ -12,8 +12,11 @@ namespace Cloth.Player
         private Vector2 _directions;
         public Action<Vector2> OnDirectionChange;
 
+        public bool blockMovement;
         void Update()
         {
+            if (blockMovement) return;
+
             float x = Input.GetAxisRaw("Horizontal");
             float y = Input.GetAxisRaw("Vertical");
 

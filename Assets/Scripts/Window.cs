@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -7,6 +8,8 @@ namespace Cloth.HUD
     {
         [SerializeField] protected CanvasGroup _canvas;
         [SerializeField] protected float _fadeDuration;
+
+        public Action OnWindowClosed;
 
         private void OnEnable()
         {
@@ -23,11 +26,12 @@ namespace Cloth.HUD
         public virtual void CloseWindow()
         {
             StartCoroutine(FadeWindow(1, 0));
-            Invoke("OnWindowClosed", _fadeDuration);
+            Invoke("DeactivateWindow", _fadeDuration);
         }
 
-        protected virtual void OnWindowClosed()
+        protected virtual void DeactivateWindow()
         {
+            OnWindowClosed?.Invoke();
             gameObject.SetActive(false);
         }
 

@@ -40,7 +40,7 @@ namespace Cloth.Player
             }
 
             _items.Remove(item);
-            equipedItem = item;
+            _equipedItems[index] = item;
 
             OnItemEquip?.Invoke(item);
         }
@@ -49,8 +49,6 @@ namespace Cloth.Player
         {
             int index = (int)item.itemSlot;
             _equipedItems[index] = null;
-            Debug.Log(index);
-            Debug.Log(_equipedItems[index]);
 
             _items.Add(item);
             OnItemUnequip?.Invoke(index);
