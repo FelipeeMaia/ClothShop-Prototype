@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7245461c576e407439f6889df6f80168, type: 3}
-  m_Name: Hair 2
+  m_Name: Side Part
   m_EditorClassIdentifier: 
   price: 100
   icon: {fileID: -1630702748, guid: 781831aff3e98ad479ec2c83c08867bb, type: 3}
   hidesHair: 0
-  itemSlot: 3
-  animation: {fileID: 0}
+  itemSlot: 2
+  animation: {fileID: 22100000, guid: 1cf3d5577ca4e654189c07ea2030fdf2, type: 2}

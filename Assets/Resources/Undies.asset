@@ -15,5 +15,5 @@ MonoBehaviour:
   price: 100
   icon: {fileID: 1002512843, guid: 049f63d819b441946bcaf13dd896ec95, type: 3}
   hidesHair: 0
-  itemSlot: 1
-  animation: {fileID: 0}
+  itemSlot: 0
+  animation: {fileID: 22100000, guid: 9d1864f08cd283c4a8c11d69d7488816, type: 2}

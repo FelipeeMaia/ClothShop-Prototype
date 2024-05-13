@@ -1,0 +1,8 @@
+iddle front = 0
+iddle back = 8
+iddle right = 16
+iddle left = 24
+walk front = 32 a 37
+walk back = 40 a 45
+walf right = 48 a 53
+walk left = 56 a 61
